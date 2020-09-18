@@ -1,5 +1,5 @@
-import React from 'react';
-import './ShopItem.css';
+import React from "react";
+import "./ShopItem.css";
 
 const ShopItem = ({ name, price }) => {
     return (
