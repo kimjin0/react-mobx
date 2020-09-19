@@ -15,7 +15,7 @@ const items = [
     },
     {
         name: '새우깡',
-        price: 1000,
+        price: 1200,
     },
 ];
 
