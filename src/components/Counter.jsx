@@ -4,15 +4,12 @@ import useStore from '../useStore';
 
 const Counter = () => {
     const { counter } = useStore();
-
     const increase = () => {
         counter.increase();
     };
-
     const decrease = () => {
         counter.decrease();
     };
-
     return useObserver(() => (
         <div>
             <h1>{counter.number}</h1>
