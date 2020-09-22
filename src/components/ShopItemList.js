@@ -21,6 +21,10 @@ const items = [
         name: '새우깡',
         price: 1200,
     },
+    {
+        name: '감자깡',
+        price: 1000,
+    },
 ];
 
 const ShopItemList = () => {
@@ -30,13 +34,13 @@ const ShopItemList = () => {
         market.put(name, price);
     };
 
-    // const itemList = items.map((item) => <ShopItem {...item} key={item.name} onPut={onPut} />);
-    // return <div>{itemList}</div>;
+    const itemList = items.map((item) => <ShopItem {...item} key={item.name} onPut={onPut} />);
+    return <div>{itemList}</div>;
 
-    return useObserver(() => {
-        const itemList = items.map((item) => <ShopItem {...item} key={item.name} onPut={onPut} />);
-        return <div>{itemList}</div>;
-    });
+    // return useObserver(() => {
+    //     const itemList = items.map((item) => <ShopItem {...item} key={item.name} onPut={onPut} />);
+    //     return <div>{itemList}</div>;
+    // });
 };
 
 export default ShopItemList;
