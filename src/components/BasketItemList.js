@@ -1,6 +1,6 @@
 import React from 'react';
 import BasketItem from './BasketItem';
-import { useObserver, useOserver } from 'mobx-react';
+import { useObserver } from 'mobx-react';
 import useStore from '../useStore';
 
 const BasketItemList = () => {
@@ -9,14 +9,15 @@ const BasketItemList = () => {
         market.take(name);
     };
     return useObserver(() => {
-        const itemList = market.selectedItems.map((item) => <BasketItem name={item.name} price={item.price} count={item.count} key={item.name} onTake={onTake} />);
+        const itemList = market.selectedItems.map((item) => <BasketItem item={item} key={item.name} onTake={onTake} />);
         return (
             <div>
                 {itemList}
-                <hr />
+                {/* TotalPrice.js 분리 */}
+                {/* <hr />
                 <p>
                     <b>종합 : </b> {market.total}원
-                </p>
+                </p> */}
             </div>
         );
     });

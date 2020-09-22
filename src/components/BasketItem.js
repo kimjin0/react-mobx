@@ -2,13 +2,14 @@ import React from 'react';
 import './BasketItem.css';
 import { useObserver } from 'mobx-react';
 
-const BasketItem = ({ name, price, count, onTake }) => {
+// **** 세부참조가 아닌 item자체를 들고옴
+const BasketItem = ({ item, onTake }) => {
     return useObserver(() => (
         <div className="BasketItem">
-            <div className="name">{name}</div>
-            <div className="price">{price}</div>
-            <div className="count">{count}</div>
-            <div className="return" onClick={() => onTake(name)}>
+            <div className="name">{item.name}</div>
+            <div className="price">{item.price}</div>
+            <div className="count">{item.count}</div>
+            <div className="return" onClick={() => onTake(item.name)}>
                 갖다놓기
             </div>
         </div>
